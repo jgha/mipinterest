@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @pin.user_id %>
+  <%= @pin.user.email %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>Active:</strong>
-  <%= @pin.active %>
+  <%= @pin.active ? 'Activo' : 'Inactivo' %>
 </p>
 
 <%= link_to 'Edit', edit_pin_path(@pin) %> |

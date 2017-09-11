@@ -26,9 +26,10 @@ class PinsController < ApplicationController
   # POST /pins.json
   def create
     @pin = Pin.new(pin_params)
+    @pin.user_id = current_user.id
+    @pin.active = true
 
     respond_to do |format|
-      
       if @pin.save
         format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
         format.json { render :show, status: :created, location: @pin }
